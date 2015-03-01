@@ -2,7 +2,10 @@ shinyUI(fluidPage(
   titlePanel("Clasical Economists"),
   
   sidebarLayout(
-    sidebarPanel( "David Ricardo"),
+    sidebarPanel( "David Ricardo",
+                  br(),
+                  img(src = "David Ricardo.jpg", height=80, width=62)
+                  ),
     mainPanel(
       h3("Introduction", align = "center"),
       p("The Classical School of Economics, refers to a school of economic thought
