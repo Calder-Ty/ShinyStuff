@@ -1,7 +1,7 @@
 shinyUI(fluidPage(
   titlePanel("title panel"),
   
-  sidebarLayout( 
+  sidebarLayout( position = "right",
     sidebarPanel( "sidebar panel"),
     mainPanel("main panel")
   )
