@@ -7,10 +7,10 @@ shinyUI(fluidPage(
                   
                   selectInput("PercRace", 
                               label = "Choose a variable to display",
-                              choices = list("Percent White" = 1, 
-                                             "Percent Black" = 2,
-                                             "Percent Hispanic"= 3, 
-                                             "Percent Asian" = 4),
+                              choices = list("Percent White", 
+                                             "Percent Black", 
+                                             "Percent Hispanic", 
+                                             "Percent Asian"),
                               selected = "Percent White"),
                   
                   sliderInput("IntrestSlider", 
