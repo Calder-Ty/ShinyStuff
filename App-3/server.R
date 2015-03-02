@@ -4,7 +4,7 @@ shinyServer(function(input, output) {
     paste("You have selected", input$PercRace)
   })
   output$Text2 <- renderText({
-    paste("You have chosen a range from", input$IntrestSlider$value[1],
-         "to", input$IntrestSlider$value[2])
+    paste("You have chosen a range from", input$IntrestSlider[1],
+         "to", input$IntrestSlider[2])
   })
 })
