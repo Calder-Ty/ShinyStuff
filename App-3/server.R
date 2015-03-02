@@ -32,16 +32,3 @@ shinyServer(
   }
 )
 
-=======
-
-shinyServer(function(input, output) {
-    
-  output$Text1 <- renderText({
-    paste("You have selected", input$PercRace)
-  })
-  output$Text2 <- renderText({
-    paste("You have chosen a range from", input$IntrestSlider[1],
-         "to", input$IntrestSlider[2])
-  })
-})
->>>>>>> 68838c706136bc6ea2e650a94cd89cfa58d62f17
