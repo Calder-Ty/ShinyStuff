@@ -1,7 +1,7 @@
 library(maps)
 library(mapproj)
 source("helpers.r")
-counties <- readRDS("App-3/data/counties.rds")
+counties <- readRDS("Data/counties.rds")
 
 # server.R
 
@@ -16,16 +16,21 @@ shinyServer(
                      "Percent Hispanic" = counties$hispanic,
                      "Percent Asian" = counties$asian)
       colors <- switch(input$var,
-                       "Percent White" = "Green",
+                       "Percent White" = "Dark Green",
                        "Percent Black" = "Black",
                        "Percent Hispanic" = "Orange",
                        "Percent Asian" = "violet")
+      legend <- switch(input$var,
+                       "Percent White" = "% White",
+                       "Percent Black" = "% Black",
+                       "Percent Hispanic" = "% Hispanic",
+                       "Percent Asian" = "% Asian")
       
       percent_map( var = data, 
                    color = colors, 
-                   legend.title = input$var, 
-                   max = input$range[1], 
-                   min = input$range[2])
+                   legend.title = legend, 
+                   max = input$range[2], 
+                   min = input$range[1])
     })
     
   }
