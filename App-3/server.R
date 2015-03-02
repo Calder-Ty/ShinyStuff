@@ -15,12 +15,17 @@ shinyServer(
                      "Percent Black" = counties$black,
                      "Percent Hispanic" = counties$hispanic,
                      "Percent Asian" = counties$asian)
+      colors <- switch(input$var,
+                       "Percent White" = "Green",
+                       "Percent Black" = "Black",
+                       "Percent Hispanic" = "Orange",
+                       "Percent Asian" = "violet")
       
       percent_map( var = data, 
-                   color = ?, 
-                   legend.title = ?, 
-                   max = ?, 
-                   min = ? )
+                   color = colors, 
+                   legend.title = input$var, 
+                   max = input$range[1], 
+                   min = input$range[2])
     })
     
   }
