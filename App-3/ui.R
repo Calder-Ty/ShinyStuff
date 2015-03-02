@@ -20,7 +20,8 @@ shinyUI(fluidPage(
                               value = c(0,100)
     )),
     
-    mainPanel("Here is the main panel")
+    mainPanel(textOutput("Text1"),
+              textOutput("Text2"))
   )
   
 ))
