@@ -1,5 +1,10 @@
+library(maps)
+library(mapproj)
+source("helpers.r")
+counties <- readRDS("App-3/data/counties.rds")
+
 shinyServer(function(input, output) {
-  
+    
   output$Text1 <- renderText({
     paste("You have selected", input$PercRace)
   })
