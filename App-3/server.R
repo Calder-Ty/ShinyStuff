@@ -1,5 +1,9 @@
+library(maps)
+library(mapproj)
+source("helpers.r")
+
 shinyServer(function(input, output) {
-  
+    
   output$Text1 <- renderText({
     paste("You have selected", input$PercRace)
   })
