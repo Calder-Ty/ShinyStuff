@@ -11,7 +11,7 @@ shinyUI(fluidPage(
                                              "Percent Black" = 2,
                                              "Percent Hispanic"= 3, 
                                              "Percent Asian" = 4),
-                              selected = "Percent White"),
+                              selected = 1),
                   
                   sliderInput("IntrestSlider", 
                               label = "Range of interest",
