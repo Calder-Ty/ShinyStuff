@@ -4,7 +4,7 @@ library(quantmod)
 source("helpers.R")
 
 shinyServer(function(input, output) {
-
+  
   dataInput <- reactive({
     getSymbols(input$symb, src = "yahoo", 
                from = input$dates[1],
@@ -12,9 +12,11 @@ shinyServer(function(input, output) {
                auto.assign = FALSE)
   })
   
-  output$plot <- renderPlot({               
-    chartSeries(dataInput(), theme = chartTheme("white"), 
-      type = "line", log.scale = input$log, TA = NULL)
+  output$plot <- renderPlot({   
+    data <- dataInput()
+    if (input$adjust) data <- adjust(dataInput())
+    
+    chartSeries(data, theme = chartTheme("white"), 
+                type = "line", log.scale = input$log, TA = NULL)
   })
-  
 })
