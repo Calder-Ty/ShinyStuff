@@ -10,12 +10,6 @@ shinyServer(function(input, output) {
                from = input$dates[1],
                to = input$dates[2],
                auto.assign = FALSE)
-    
-  })
-  
-  finalInput <- reactive({
-    if (!input$adjust) return(dataInput())
-    adjust(dataInput())
   })
   
   output$plot <- renderPlot({   
